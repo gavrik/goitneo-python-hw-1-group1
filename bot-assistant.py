@@ -2,7 +2,7 @@ DB = {}
 
 def parce_input(input):
     cmd, *args = user_input.split()
-    return cmd, *args
+    return cmd.lower(), *args
 
 def add_contact_handler(args):
     if len(args) < 2:
@@ -39,7 +39,7 @@ if __name__ == "__main__":
     print("Welcome to the assistant bot!")
 
     while True:
-        user_input = input("Enter a command: ").strip().lower()
+        user_input = input("Enter a command: ").strip()
         command, *args = parce_input(user_input)
 
         if command in ["close", "exit"]:
